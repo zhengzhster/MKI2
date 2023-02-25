@@ -8,12 +8,21 @@
 </head>
 
 <body>
-  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
-  <table id="data-output" class="display nowrap" style="width:100%">
+  <!-- Content Introduction -->
+          <h1>MKI database: A Curated, Updated Database of Macrocyclic Kinase Inhibitors</h1>
+	   <p></p>
+	  <p>Latest update: <b>2022-11-16</b></p>
+          <p>Number of MKIs: <b>641</b></p>
+	  <p>Number of Kinases: <b></b></p>
+          <p>New inhibitors this month: <b>Emprumapimod, Ivarmacitinib, Pirotinib</b></p>
+          <p>Download csv file:
+              <a href='https://github.com/zhengzhster/MKIs/blob/main/MKI_table.csv' download>MKI_table.csv</a>
+          </p>
+  
+  <table id="data-output" class="display nowrap" style="width:96%">
 	  
     <thead>
 	    <tr>
-	      <th>Index</th>
 	      <th>MKI Index</th>
 	      <th>SMILES</th>
 	      <th>Names in literature</th>
@@ -27,7 +36,6 @@
     </thead>
     <tfoot>
 	    <tr>
-	      <th>Index</th>
 	      <th>MKI Index</th>
 	      <th>SMILES</th>
 	      <th>Names in literature</th>
@@ -51,7 +59,6 @@
           scrollX: true,
 	  data: mkidatas,
           "columns":[
-            {data: "Index"},
 	    {data: "MKI Index"},
 	    {data: "SMILES"},
 	    {data: "Names in literature"},
