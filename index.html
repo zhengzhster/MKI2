@@ -9,53 +9,56 @@
 
 <body>
   <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
-  <table id="data-output" class="display" style="width:100%">
+  <table id="data-output" class="display" style="width:90%">
     <thead>
 	    <tr>
 	      <th>Index</th>
-	      <th>Names in References</th>
+	      <th>MKI Index</th>
 	      <th>SMILES</th>
+	      <th>Names in References</th>
+	      <th>Kinase Targets</th>
+              <th>Types</th>
+              <th>Binding Affinities</th>
+              <th>References</th>
+	      <th>Scaffolds</th>
 	      <th>SMILES withous Bridge Linkers</th>
-        <th>Scaffolds</th>
-        <th>Kinase Targets</th>
-        <th>Types</th>
-        <th>Binding Affinities</th>
-        <th>References</th>
 	    </tr>
     </thead>
     <tfoot>
 	    <tr>
 	      <th>Index</th>
-	      <th>Names in References</th>
+	      <th>MKI Index</th>
 	      <th>SMILES</th>
+	      <th>Names in References</th>
+	      <th>Kinase Targets</th>
+              <th>Types</th>
+              <th>Binding Affinities</th>
+              <th>References</th>
+	      <th>Scaffolds</th>
 	      <th>SMILES withous Bridge Linkers</th>
-        <th>Scaffolds</th>
-        <th>Kinase Targets</th>
-        <th>Types</th>
-        <th>Binding Affinities</th>
-        <th>References</th>
 	    </tr>
     </tfoot>
   </table>
   
   <script>
-    fetch("mkistable.json")
+    fetch("mkidata.json")
       .then(function(response){
         return response.json();
       })
-      .then(function(mkistables){
+      .then(function(mkisdatas){
         $("#data-output").DataTable({
-          data: mkistables,
+          data: mkidatas,
           "columns":[
             {data: "Index"},
-            {data: "Names in References"},
-            {data: "SMILES"},
-            {data: "SMILES withous Bridge Linkers"},
-            {data: "Scaffolds"},
+	    {data: "MKI Index"},
+	    {data: "SMILES"},
+	    {data: "Names in References"},
             {data: "Kinase Targets"},
             {data: "Types"},
             {data: "Binding Affinities"},
-            {data: "References"}
+            {data: "References"},
+            {data: "Scaffolds"},           
+            {data: "SMILES withous Bridge Linkers"}
           ]
         });
       });
