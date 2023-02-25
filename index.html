@@ -2,52 +2,82 @@
 <head>
   	<title>Person Information</title>
   	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
-	<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    div.dataTables_wrapper {
+      width: 1100px;
+      margin: 10 auto;
+    }
+    table.dataTable td {
+      font-size: 13;
+    }
+    .container {
+      display: inline-block;
+      vertical-align: bottom;
+    }
+    .content {
+      display: inline-block;
+      width: 1100px;
+      padding-right: 100px;
+    }
+  </style>
+  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
 </head>
 
 <body>
-  <!-- Content Introduction -->
-          <h1>MKI database: A Curated, Updated Database of Macrocyclic Kinase Inhibitors</h1>
-	   <p></p>
-	  <p>Latest update: <b>2022-11-16</b></p>
-          <p>Number of MKIs: <b>641</b></p>
-	  <p>Number of Kinases: <b></b></p>
-          <p>New inhibitors this month: <b>Emprumapimod, Ivarmacitinib, Pirotinib</b></p>
-          <p>Download csv file:
+    <div class="Introduction">
+        <div class="row">
+          <div class="col-md-6">
+            <h1>MKI Database: a database of Macrocyclic Kinase Inhibitors</h1>
+            <p> The MKI database, constructed by collecting all published MKIs with nanomolar activity from the scientific literature, paints a panorama of the current progress of MKIs, elucidates the characteristics of MKIs and scaffolds, and dissects the core structure of MKIs. It's free and will be updated timely that we hope it will facilitate the design and development of future MKIs. </p>
+            <p></p>
+            <p>Latest update: <b>2022-11-16</b></p>
+            <p>Number of MKIs: <b>641</b></p>
+            <p>Number of Covered Kinases: <b>56</b></p>
+            <p>Download csv file:
               <a href='./MKI_table.csv' download>MKI_table.csv</a>
-          </p>
-  
-    <table id="data-output" class="display nowrap" style="width:80%">
-	  
-    <thead>
-	    <tr>
-	      <th>MKI Index</th>
-	      <th>SMILES</th>
-	      <th>Names in literature</th>
-	      <th>Kinase Target</th>
-              <th>Type</th>
-              <th>Binding Affinity</th>
-              <th>Reference</th>
-	      <th>Scaffold</th>
-	      <th>SMILES withous Bridge Linker</th>
-	    </tr>
-    </thead>
-    <tfoot>
-	    <tr>
-	      <th>MKI Index</th>
-	      <th>SMILES</th>
-	      <th>Names in literature</th>
-	      <th>Kinase Target</th>
-              <th>Type</th>
-              <th>Binding Affinity</th>
-              <th>Reference</th>
-	      <th>Scaffold</th>
-	      <th>SMILES withous Bridge Linker</th>
-	    </tr>
-    </tfoot>
-  </table>
+            </p>  
+          </div>
+          <div class="col-md-6">
+            <img src="https://example.com/image.png" class="img-fluid">
+          </div>
+        </div>
+      </div>
+
+  <div class="container">
+    <table id="data-output" class="display nowrap">
+      <thead>
+	      <tr>
+	        <th>MKI Index</th>
+	        <th>SMILES</th>
+	        <th>Kinase Target</th>
+          <th>Binding Affinity</th>
+          <th>Type</th>
+          <th>Names in literature</th>
+          <th>Reference</th>
+	        <th>Scaffold</th>
+	        <th>SMILES withous Bridge Linker</th>
+	      </tr>
+      </thead>
+      <tfoot>
+	      <tr>
+	        <th>MKI Index</th>
+	        <th>SMILES</th>
+	        <th>Kinase Target</th>
+          <th>Binding Affinity</th>
+          <th>Type</th>
+          <th>Names in literature</th>
+          <th>Reference</th>
+	        <th>Scaffold</th>
+	        <th>SMILES withous Bridge Linker</th>
+	      </tr>
+      </tfoot>
+    </table>
+  </div>
   
   <script>
     fetch("mkidata.json")
@@ -61,10 +91,10 @@
           "columns":[
 	    {data: "MKI Index"},
 	    {data: "SMILES"},
-	    {data: "Names in literature"},
             {data: "Kinase Target"},
-            {data: "Type"},
             {data: "Binding Affinity"},
+            {data: "Type"},
+            {data: "Names in literature"},
             {data: "Reference"},
             {data: "Scaffold"},           
             {data: "SMILES withous Bridge Linker"}
