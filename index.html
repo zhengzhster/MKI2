@@ -6,22 +6,28 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
   <style>
     div.dataTables_wrapper {
-      width: 1100px;
-      margin: 10 auto;
+      width: 1000px;
+      margin: 4 auto;
     }
     table.dataTable td {
       font-size: 13;
     }
     .container {
       display: inline-block;
-      vertical-align: bottom;
+      vertical-align: top;
     }
     .content {
       display: inline-block;
       width: 1100px;
-      padding-right: 100px;
+      padding-top: 0px;
+      padding-left: 100px;
     }
   </style>
   <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -29,54 +35,63 @@
 </head>
 
 <body>
+<div class="container">
+<div class="Introduction", style="display: inline-block; width: 1200px; padding-top: 20px; padding-left: 50px; padding-bottom: 50px;"  >
   <h1>MKI Database: a database of Macrocyclic Kinase Inhibitors</h1>
-  <div class="Introduction">
-        <div class="row">
-          <div class="col-md-6">
-            <p> The MKI database, constructed by collecting all published MKIs with nanomolar activity from the scientific literature, paints a panorama of the current progress of MKIs, elucidates the characteristics of MKIs and scaffolds, and dissects the core structure of MKIs. It's free and will be updated timely that we hope it will facilitate the design and development of future MKIs. </p>
-            <p></p>
-            <p>Latest update: <b>2022-11-16</b></p>
-            <p>Number of MKIs: <b>641</b></p>
-            <p>Number of Covered Kinases: <b>56</b></p>
-            <p>Download csv file:
-              <a href='./MKI_table.csv' download>MKI_table.csv</a>
-            </p>  
-          </div>
-          <div class="col-md-6">
-            <img src="./prof_pic.jpg" class="img-fluid">
-          </div>
-        </div>
+</div>
+</div>
+<div class="container">
+   <div class="row justify-content-center", style="display:flex; padding-left: 100px; padding-bottom: 30px;">
+      <div class="col-md-6">
+        <p style="font-size: 18; "> MKI database, constructed by collecting all published MKIs with nanomolar activity from the scientific literature, paints a panorama of the current progress of MKIs, elucidates the characteristics of MKIs and scaffolds, and dissects the core structure of MKIs. It's free and will be updated timely that we hope it will facilitate the design and development of future MKIs.</p>
+        <p>Latest update: <b>2022-11-16</b></p>
+        <p>Number of MKIs: <b>641</b></p>
+        <p>Number of Covered Kinases: <b>56</b></p>
+        <p>Download csv file:
+          <a href='./MKI_table.csv' download>MKI_table.csv</a>
+        </p>  
+        <p>Reference:  </p>
+      </div>
+      <div class="col-md-6">
+        <img src="./MKIs2.png" class="img-fluid", width="400">
+      </div>
+    </div>
   </div>
+  
 
   <div class="container">
+
     <table id="data-output" class="display nowrap">
       <thead>
 	      <tr>
-	        <th>MKI Index</th>
-	        <th>SMILES</th>
-	        <th>Kinase Target</th>
+	      <th>MKI Index</th>  
+	      <th>Kinase Target</th>
           <th>Binding Affinity</th>
           <th>Type</th>
           <th>Names in literature</th>
           <th>Reference</th>
-	        <th>Scaffold</th>
-	        <th>SMILES withous Bridge Linker</th>
+          <th>SMILES</th>
+	      <th>Scaffold</th>
+	      <th>SMILES withous Bridge Linker</th>
 	      </tr>
       </thead>
       <tfoot>
 	      <tr>
-	        <th>MKI Index</th>
-	        <th>SMILES</th>
-	        <th>Kinase Target</th>
+	      <th>MKI Index</th>
+	      <th>Kinase Target</th>
           <th>Binding Affinity</th>
           <th>Type</th>
           <th>Names in literature</th>
           <th>Reference</th>
-	        <th>Scaffold</th>
-	        <th>SMILES withous Bridge Linker</th>
+          <th>SMILES</th>
+	      <th>Scaffold</th>
+	      <th>SMILES withous Bridge Linker</th>
 	      </tr>
       </tfoot>
     </table>
+    <div class="Introduction", style="display: inline-block; width: 1200px; padding-left: 50px;"  >
+        <!--<p><b>Note: Horizontal scrolling works for accessing all features</b></p> -->
+      </div>
   </div>
   
   <script>
@@ -89,13 +104,13 @@
           scrollX: true,
 	  data: mkidatas,
           "columns":[
-	    {data: "MKI Index"},
-	    {data: "SMILES"},
+	        {data: "MKI Index"},
             {data: "Kinase Target"},
             {data: "Binding Affinity"},
             {data: "Type"},
             {data: "Names in literature"},
             {data: "Reference"},
+            {data: "SMILES"},
             {data: "Scaffold"},           
             {data: "SMILES withous Bridge Linker"}
           ]
