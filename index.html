@@ -2,14 +2,18 @@
 <head>
   	<title>Person Information</title>
   	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-	<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
+	<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
 </head>
 
 <body>
   <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
-  <table id="data-output" class="display" style="width:90%">
+  <table id="data-output" class="display nowrap" style="width:100%">
+  div.dataTables_wrapper {
+        width: 800px;
+        margin: 0 auto;
+    }
     <thead>
 	    <tr>
 	      <th>Index</th>
@@ -47,7 +51,8 @@
       })
       .then(function(mkidatas){
         $("#data-output").DataTable({
-          data: mkidatas,
+          scrollX: true,
+	  data: mkidatas,
           "columns":[
             {data: "Index"},
 	    {data: "MKI Index"},
