@@ -1,0 +1,64 @@
+<html>
+<head>
+  	<title>Person Information</title>
+  	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+	<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+</head>
+
+<body>
+  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
+  <table id="data-output" class="display" style="width:100%">
+    <thead>
+	    <tr>
+	      <th>Index</th>
+	      <th>Names</th>
+	      <th>SMILES</th>
+	      <th>SMILES withous Bridge Linkers</th>
+        <th>Scaffolds</th>
+        <th>Kinase Targets</th>
+        <th>Types</th>
+        <th>Binding Affinities</th>
+        <th>References</th>
+	    </tr>
+    </thead>
+    <tfoot>
+	    <tr>
+	      <th>Index</th>
+	      <th>Names</th>
+	      <th>SMILES</th>
+	      <th>SMILES withous Bridge Linkers</th>
+        <th>Scaffolds</th>
+        <th>Kinase Targets</th>
+        <th>Types</th>
+        <th>Binding Affinities</th>
+        <th>References</th>
+	    </tr>
+    </tfoot>
+  </table>
+  
+  <script>
+    fetch("mkistable.json")
+      .then(function(response){
+        return response.json();
+      })
+      .then(function(mkistables){
+        $("#data-output").DataTable({
+          data: mkistables,
+          "columns":[
+            {data: "Index"},
+            {data: "Names"},
+            {data: "SMILES"},
+            {data: "SMILES withous Bridge Linkers"},
+            {data: "Scaffolds"},
+            {data: "Kinase Targets"},
+            {data: "Types"},
+            {data: "Binding Affinities"},
+            {data: "References"}
+          ]
+        });
+      });
+  </script>
+</body>
+</html>
