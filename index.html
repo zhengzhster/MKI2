@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    
+
   <style>
     div.dataTables_wrapper {
       width: 1000px;
@@ -43,13 +43,13 @@
 <div class="container">
    <div class="row justify-content-center", style="display:flex; padding-left: 100px; padding-bottom: 30px;">
       <div class="col-md-6">
-        <p style="font-size: 18; "> The MKI database is constructed by collecting all the published MKIs with nanomolar binding affinities from the scientific literature, describing a panoramic view of the current progress of MKIs, elucidating the characteristics of MKIs and scaffolds, and dissecting the core structures of MKIs. It is freely available and will be updated regularly. We hope it will facilitate the design and development of future MKIs.</p>
-        <p>Latest update: <b>2022-12-23</b></p>
-        <p>Number of MKIs: <b>641</b></p>
-        <p>Number of Covered Kinases: <b>56</b></p>
+        <p style="font-size: 18; "> The macrocyclic kinase inhibitor (MKI) database is constructed by collecting all the published MKIs with nanomolar binding affinities from the scientific literature, describing a panoramic view of the current progress of MKIs, elucidating the characteristics of MKIs and scaffolds, and dissecting the core structures of MKIs. It is freely available and will be updated regularly. We hope it will facilitate the design and development of future MKIs.</p>
+        <p>Latest update: <b>2025-01-17</b></p>
+        <p>Number of MKIs: <b>727</b></p>
+        <p>Number of Covered Kinases: <b>64</b></p>
         <p>Download the database(CSV file):
           <a href='./MKI_database.csv' download>MKI_table.csv</a>
-        </p>  
+        </p>
         <p>Reference: <a href="https://doi.org/10.1021/acsptsci.3c00078"> ACS Pharmacol. Transl. Sci. 2023, 6, 8, 1182–1191 </a></p>
       </div>
       <div class="col-md-6">
@@ -57,14 +57,14 @@
       </div>
     </div>
   </div>
-  
+
 
   <div class="container">
 
     <table id="data-output" class="display nowrap">
       <thead>
 	      <tr>
-	      <th>Index</th>  
+	      <th>Index</th>
 	      <th>Kinase Target</th>
           <th>Binding Affinity</th>
           <th>Type</th>
@@ -93,7 +93,7 @@
         <!--<p><b>Note: Horizontal scrolling works for accessing all features</b></p> -->
       </div>
   </div>
-  
+
   <script>
     fetch("mkidata.json")
       .then(function(response){
@@ -111,7 +111,7 @@
             {data: "Names in literature"},
             {data: "Reference"},
             {data: "SMILES"},
-            {data: "Scaffold"},           
+            {data: "Scaffold"},
             {data: "SMILES withous Bridge Linker"}
           ]
         });
